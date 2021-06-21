@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +7,16 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Intern-Day01';
+  email = 'Dùng [(ngModel)]';
+  fullName = 'Dùng Event Binding';
+  userName = '';
+  
+  onKey($event:any){
+    this.userName = $event.target.value;
+  }
+  handleFullName():void{
+    this.fullName = this.userName;
+  }
 }
+
+
